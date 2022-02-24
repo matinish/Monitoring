@@ -12,7 +12,7 @@ a2=Y
 read -r answer
 
 if [ "$answer" = "$a1" ] || [ "$answer" = "$a2" ]; then
-echo $system > $(date +"%d_%m_%Y_%H_%M_%S".status)
+    echo $system >$(date +"%d_%m_%Y_%H_%M_%S".status)
 else
-exit
+    exit
 fi
