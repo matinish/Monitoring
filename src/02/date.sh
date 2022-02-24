@@ -2,10 +2,10 @@
 
 TIMEZONE="$(cat /etc/timezone) UTC $(date +"%Z")"
 USER="$(whoami)"
-OS="$(cat /etc/issue | awk '{print $1$2}')"
+OS="$(cat /etc/issue | awk '{print $1" "$2}')"
 DATE="$(date +"%d %B %Y %T")"
-UPTIME="$(uptime -p | awk '{print $2$3}')"
-UPTIME_SEC="$(cat /proc/uptime | awk '{printf $1 "seconds"}')"
+UPTIME="$(uptime -p | awk '{print $2" "$3}')"
+UPTIME_SEC="$(cat /proc/uptime | awk '{printf $1" ""seconds"}')"
 IP="$(ip route get 1.1.1.1 | awk '{print $7}')"
 MASK="$(netstat -rn | awk 'NR==4 {print $3}')"
 GATEWAY="$(ip route | grep default | awk '{print $3}')"
