@@ -25,6 +25,7 @@ case "$1" in
 4) back=$blueb;;
 5) back=$purpleb;;
 6) back=$blackb;;
+*) back="error";;
 esac
 break
 done
@@ -38,6 +39,7 @@ case "$2" in
 4) text=$bluet;;
 5) text=$purplet;;
 6) text=$blackt;;
+*) text="error";;
 esac
 break
 done
@@ -51,6 +53,7 @@ case "$3" in
 4) back2=$blueb;;
 5) back2=$purpleb;;
 6) back2=$blackb;;
+*) back2="error";;
 esac
 break
 done
@@ -64,6 +67,7 @@ case "$4" in
 4) text2=$bluet;;
 5) text2=$purplet;;
 6) text2=$blackt;;
+*) text2="error";;
 esac
 break
 done
