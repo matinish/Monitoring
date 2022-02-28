@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source column.sh
-
 redb="\e[41m"
 blueb="\e[44m"
 whiteb="\e[47m"
@@ -75,18 +73,4 @@ while [ -n "$text2" ]; do
     break
 done
 
-if [[ $back = "" ]] || [[ $text = "" ]] || [[ $back3 = "" ]] || [[ $text3 = "" ]]; then
-    back=$blueb
-    text=$whitet
-    back3=$purpleb
-    text3=$whitet
-    column="Column 1 background = default (blue)
-Column 1 font color = default (white)
-Column 2 background = default (purple)
-Column 2 font color = default (white)"
-else
-    column="Column 1 background = $back1 ($column1)
-Column 1 font color = $text1 ($font1)
-Column 2 background = $back2 ($column2)
-Column 2 font color = $text2 ($font2)"
-fi
+source column.sh
