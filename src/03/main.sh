@@ -1,11 +1,10 @@
 #!/bin/bash
 
-source date.sh
+source data.sh
 source color.sh
 source system.sh
 
 IFS=""
-error=error
 
 if [ "$1" = "$2" ] || [ "$3" = "$4" ]; then
     echo Введены совпадающие значения

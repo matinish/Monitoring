@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source date.sh
+source data.sh
 source color.sh
 source system.sh
 
