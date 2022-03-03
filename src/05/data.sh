@@ -11,7 +11,6 @@ archive="$(find $dir -name "*.rar" -name "*.zip" 2>/dev/null | wc -l)"
 sym="$(find $dir -type l 2>/dev/null | wc -l)"
 topfile="$(find $dir -type f -exec du -Sh {} + 2>/dev/null | sort -hr | head -10 |
     awk '{printf "%s - %s, %s, ", NR, $2, $1}{split($2,a,"."); print a[length(a)]}')"
-filename=$(find $dir -type f -executable -exec du -Sh {} + 2>/dev/null | sort -hr | head -10 | awk '{print $2}')
+filename="$(find $dir -type f -executable -exec du -Sh {} + 2>/dev/null | sort -hr | head -10 | awk '{print $2}')"
 filesize=$(find $dir -type f -executable -exec du -Sh {} + 2>/dev/null | sort -hr | head -10 | awk '{print $1}')
-md5sum=$(md5sum $filename)
-topexe="$(find $dir -type f -executable -exec du -Sh {} + 2>/dev/null | sort -hr | head -10 | awk '{print "- " $2 ", " $1 ", " $md5sum}' | cat -n)"
+topexe="$(find $dir -type f -executable -exec du -Sh {} + 2>/dev/null | sort -hr | head -10 | md5sum ${filename} | awk '{print "- " $2 ", " $1 ", "}' | cat -n)"
