@@ -15,10 +15,9 @@ system=$(
     echo "Symbolic links = $sym"
     echo "TOP 10 files of maximum size arranged in descending order (path, size and type):"
     echo $topfile
-    echo $type
     echo "etc up to 10"
-    echo "TOP 10 executable files of the maximum size arranged in descending order (path, size and MD5 hash of file)"
-    #echo $topexe
+    echo "TOP 10 executable files of the maximum size arranged in descending order (path, size and MD5 hash of file):"
+    echo $topexe
     echo "etc up to 10"
     #echo "Script execution time (in seconds) = $time"
 )
